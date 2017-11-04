@@ -1,0 +1,15 @@
+#!/bin/sh
+
+working=$(pwd)
+mkdir -p "$2"
+build=$(cd "$1/" && pwd)
+cache=$(cd "$2/" && pwd)
+env=$(cd "$3/" && pwd)
+
+cd $build
+
+echo "Downloading oklog"
+
+mkdir bin
+
+curl -L -o bin/oklog https://github.com/oklog/oklog/releases/download/v0.2.2/oklog-0.2.2-linux-amd64
